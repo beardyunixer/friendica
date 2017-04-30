@@ -227,7 +227,7 @@ function profile_photo_content(App $a) {
 			);
 
 			// Update global directory in background
-			$url = $url = App::get_baseurl() . '/about/' . $_SESSION['uid'];
+			$url = $url = App::get_baseurl() . '/about/' . $_SESSION['nickname'];
 			if ($url && strlen(get_config('system','directory'))) {
 				$url = App::get_baseurl() . '/about/' . $a->user['nickname'];
 				proc_run(PRIORITY_LOW, "include/directory.php", $url);

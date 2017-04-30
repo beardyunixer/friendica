@@ -64,7 +64,7 @@ function register_post(App $a) {
 	$user = $result['user'];
 
 	if($netpublish && $a->config['register_policy'] != REGISTER_APPROVE) {
-		$url = App::get_baseurl() . '/profile/' . $user['nickname'];
+		$url = App::get_baseurl() . '/about/' . $user['nickname'];
 		proc_run(PRIORITY_LOW, "include/directory.php", $url);
 	}
 

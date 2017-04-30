@@ -37,7 +37,7 @@ function user_allow($hash) {
 		intval($user[0]['uid'])
 	);
 	if (dbm::is_result($r) && $r[0]['net-publish']) {
-		$url = App::get_baseurl() . '/profile/' . $user[0]['nickname'];
+		$url = App::get_baseurl() . '/about/' . $user[0]['nickname'];
 		if ($url && strlen(get_config('system','directory'))) {
 			proc_run(PRIORITY_LOW, "include/directory.php", $url);
 		}

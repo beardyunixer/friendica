@@ -47,7 +47,7 @@ function user_remove($uid) {
 	proc_run(PRIORITY_HIGH, "include/notifier.php", "removeme", $uid);
 
 	// Send an update to the directory
-	proc_run(PRIORITY_LOW, "include/directory.php", $r[0]['url']);
+	proc_run(PRIORITY_LOW, "include/directory.php", $url = App::get_baseurl() . '/about/' . $r[0]['nickname'];
 
 	if($uid == local_user()) {
 		unset($_SESSION['authenticated']);

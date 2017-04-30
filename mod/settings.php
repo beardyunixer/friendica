@@ -629,7 +629,7 @@ function settings_post(App $a) {
 
 	if (($old_visibility != $net_publish) || ($page_flags != $old_page_flags)) {
 		// Update global directory in background
-		$url = $_SESSION['my_url'];
+		$url = App::get_baseurl() . '/about/' . $_SESSION['nickname'];
 		if ($url && strlen(get_config('system','directory'))) {
 			proc_run(PRIORITY_LOW, "include/directory.php", $url);
 		}

@@ -501,7 +501,7 @@ function profiles_post(App $a) {
 			);
 
 			// Update global directory in background
-			$url = $_SESSION['my_url'];
+			$url = App::get_baseurl() . '/about/' . $_SESSION['nickname'];
 			if ($url && strlen(get_config('system','directory'))) {
 				proc_run(PRIORITY_LOW, "include/directory.php", $url);
 			}
